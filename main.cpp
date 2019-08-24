@@ -5,12 +5,12 @@ using std::cout;
 using std::cin;
 using std::endl;
 
-int main(int argc, char const *argv[])
-{
-    const int height = 15;
-    const int width = 15;
+// Screen size
+const int height = 15;
+const int width = 15;
 
-    system("clear");
+// Frames Per Second
+const int FPS = 60;
 
 void init_scr(char screen[][width]);
 
@@ -22,9 +22,10 @@ int main(int argc, char const *argv[])
 
     unsigned int counter = 0;
 
-    while (true)                    // Infinite render
+    system("clear");
+    while (true)
     {
-        if (counter <= 60)
+        if (counter <= FPS)
         {
             system("clear");
             for (int i = 0; i < height; i++)
