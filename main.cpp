@@ -1,57 +1,16 @@
-#include <iostream>
-#include <unistd.h>
+#include "rend.h"
 
-using std::cout;
-using std::endl;
-
-// Screen size
-const int height = 15;
-const int width = 15;
-
-// Frames Per Second
-const int FPS = 60;
-
-void init_scr(char screen[][width]);
+using rend::height;
+using rend::width;
+using rend::init_scr;
+using rend::render;
 
 int main(int argc, char const *argv[])
 {
     char screen[height][width];
 
     init_scr(screen);
+    render(screen, -1);
 
-    unsigned int counter = 0;
-
-    system("clear");
-    while (true)
-    {
-        if (counter <= FPS)
-        {
-            system("clear");
-            for (int i = 0; i < height; i++)
-            {
-                for (int j = 0; j < width; j++)
-                {
-                    cout << screen[i][j];
-                }
-                cout << endl;
-            }
-            counter++;
-        } else
-        {
-            sleep(1);
-            counter = 0;
-        }
-    }
     return 0;
-}
-
-void init_scr(char screen[][width])
-{
-    for (int i = 0; i < height; i++)
-    {
-        for (int j = 0; j < width; j++)
-        {
-            screen[i][j] = '#';
-        }
-    }
 }
