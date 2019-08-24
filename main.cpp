@@ -2,7 +2,6 @@
 #include <unistd.h>
 
 using std::cout;
-using std::cin;
 using std::endl;
 
 // Screen size
