@@ -12,15 +12,13 @@ int main(int argc, char const *argv[])
 
     system("clear");
 
+void init_scr(char screen[][width]);
+
+int main(int argc, char const *argv[])
+{
     char screen[height][width];
 
-    for (int i = 0; i < height; i++)    // Init screen
-    {
-        for (int j = 0; j < width; j++)
-        {
-            screen[i][j] = '#';
-        }
-    }
+    init_scr(screen);
 
     unsigned int counter = 0;
 
@@ -45,4 +43,15 @@ int main(int argc, char const *argv[])
         }
     }
     return 0;
+}
+
+void init_scr(char screen[][width])
+{
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            screen[i][j] = '#';
+        }
+    }
 }
