@@ -5,6 +5,7 @@ rend::Screen::Screen(unsigned int scr_height, unsigned int scr_width, unsigned i
     height = scr_height;
     width = scr_width;
     FPS = scr_FPS;
+    frame_time = 1 / (float) FPS;
     
     screen.resize(height);
     for (int i = 0; i < height; i++)

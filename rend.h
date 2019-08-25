@@ -13,6 +13,7 @@ namespace rend
     private:
         // Screen size and Frames Per Second
         int height, width, FPS;
+        float frame_time;
 
         std::vector<std::vector<char>> screen;
 
