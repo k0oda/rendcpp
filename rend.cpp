@@ -49,6 +49,7 @@ void rend::Screen::render(int repeat)
     unsigned int counter = 0;
 
     system("clear");
+    system("setterm -cursor off");  // Hide cursor
     while (counter <= repeat)
     {
         for (std::vector<std::vector<char>> frame : frame_list)
@@ -58,4 +59,5 @@ void rend::Screen::render(int repeat)
         }
         counter++;
     }
+    system("setterm -cursor on");   // Show cursor
 }
