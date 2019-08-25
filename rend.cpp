@@ -31,8 +31,6 @@ void rend::Screen::fill_frame(unsigned int frame_index, char fill_sym)
 
 void rend::Screen::render_frame(std::vector<std::vector<char>> frame)
 {
-    std::string output_str;
-
     std::cout << "\033[1;1H";   // Reset cursor position
     for (int i = 0; i < this->height; i++)
     {
