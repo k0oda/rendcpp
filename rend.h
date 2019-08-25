@@ -4,17 +4,23 @@
 #include <iostream>
 #include <unistd.h>
 
+
 namespace rend
 {
-    // Screen size
-    const int height = 15;
-    const int width = 15;
+    class Screen
+    {
+    private:
+        // Screen size and Frames Per Second
+        int height, width, FPS;
 
     // Frames Per Second
     const int FPS = 60;
 
-    void init_scr(char screen[][width]);
-    void render(char screen[][width], int repeat=1);
+    public:
+        Screen(unsigned int scr_height, unsigned int scr_width, unsigned int scr_FPS);
+        void init_scr();
+        void render(int repeat=1);
+    };
 }
 
 #endif
