@@ -1,6 +1,19 @@
 #include "rend.h"
 
-void rend::init_scr(char screen[][width])
+rend::Screen::Screen(unsigned int scr_height, unsigned int scr_width, unsigned int scr_FPS)
+{
+    height = scr_height;
+    width = scr_width;
+    FPS = scr_FPS;
+    
+    screen.resize(height);
+    for (int i = 0; i < height; i++)
+    {
+        screen[i].resize(width);
+    }
+}
+
+void rend::Screen::init_scr()
 {
     for (int i = 0; i < height; i++)
     {

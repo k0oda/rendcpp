@@ -2,6 +2,7 @@
 #define REND_H
 
 #include <iostream>
+#include <vector>
 #include <unistd.h>
 
 
@@ -13,8 +14,7 @@ namespace rend
         // Screen size and Frames Per Second
         int height, width, FPS;
 
-    // Frames Per Second
-    const int FPS = 60;
+        std::vector<std::vector<char>> screen;
 
     public:
         Screen(unsigned int scr_height, unsigned int scr_width, unsigned int scr_FPS);
