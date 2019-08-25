@@ -44,9 +44,18 @@ void rend::Screen::render_frame(std::vector<std::vector<char>> frame)
     }
 }
 
+void rend::Screen::render(int repeat)
+{
+    unsigned int counter = 0;
+
+    system("clear");
+    while (counter <= repeat)
+    {
+        for (std::vector<std::vector<char>> frame : frame_list)
         {
-            sleep(1);
-            frame_counter = 0;
+            sleep(frame_time);
+            this->render_frame(frame);
         }
+        counter++;
     }
 }
