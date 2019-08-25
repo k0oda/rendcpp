@@ -23,6 +23,7 @@ namespace rend
     public:
         Screen(unsigned int scr_height, unsigned int scr_width, unsigned int scr_FPS, unsigned int frames_count);
         void fill_frame(unsigned int frame_index, char fill_sym='#');
+        void edit_frame(unsigned int frame_index, unsigned int x, unsigned int y, char sym=' ');
         void render(int repeat=1);
     };
 }

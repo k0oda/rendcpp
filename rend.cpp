@@ -29,6 +29,11 @@ void rend::Screen::fill_frame(unsigned int frame_index, char fill_sym)
     }
 }
 
+void rend::Screen::edit_frame(unsigned int frame_index, unsigned int x, unsigned int y, char sym)
+{
+    this->frame_list[frame_index][y][x] = sym;
+}
+
 void rend::Screen::render_frame(std::vector<std::vector<char>> frame)
 {
     std::cout << "\033[1;1H";   // Reset cursor position
