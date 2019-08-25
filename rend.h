@@ -18,6 +18,8 @@ namespace rend
         std::vector<std::vector<char>> frame;
         std::vector<std::vector<std::vector<char>>> frame_list;
 
+        void render_frame(std::vector<std::vector<char>> frame);
+
     public:
         Screen(unsigned int scr_height, unsigned int scr_width, unsigned int scr_FPS);
         void init_scr();

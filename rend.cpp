@@ -29,26 +29,21 @@ void rend::Screen::init_scr()
     }
 }
 
-void rend::Screen::render(int repeat)
+void rend::Screen::render_frame(std::vector<std::vector<char>> frame)
 {
-    unsigned int frame_counter = 0;
+    std::string output_str;
 
-    system("clear");
-    for (unsigned int repeat_counter = 0; repeat_counter <= repeat; repeat_counter++)
+    std::cout << "\033[1;1H";   // Reset cursor position
+    for (int i = 0; i < this->height; i++)
     {
-        if (frame_counter <= this->FPS)
+        for (int j = 0; j < this->width; j++)
         {
-            system("clear");
-            for (int i = 0; i < this->height; i++)
-            {
-                for (int j = 0; j < this->width; j++)
-                {
-                    std::cout << screen[i][j];
-                }
-                std::cout << std::endl;
-            }
-            frame_counter++;
-        } else
+            std::cout << frame[i][j];
+        }
+        std::cout << std::endl;
+    }
+}
+
         {
             sleep(1);
             frame_counter = 0;
