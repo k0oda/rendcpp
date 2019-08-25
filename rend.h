@@ -21,7 +21,7 @@ namespace rend
         void render_frame(std::vector<std::vector<char>> frame);
 
     public:
-        Screen(unsigned int scr_height, unsigned int scr_width, unsigned int scr_FPS);
+        Screen(unsigned int scr_height, unsigned int scr_width, unsigned int scr_FPS, unsigned int frames_count);
         void init_scr();
         void render(int repeat=1);
     };
