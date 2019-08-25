@@ -18,13 +18,13 @@ rend::Screen::Screen(unsigned int scr_height, unsigned int scr_width, unsigned i
     }
 }
 
-void rend::Screen::init_scr()
+void rend::Screen::fill_frame(unsigned int frame_index, char fill_sym)
 {
-    for (int i = 0; i < height; i++)
+    for (int i = 0; i < this->height; i++)
     {
-        for (int j = 0; j < width; j++)
+        for (int j = 0; j < this->width; j++)
         {
-            this->screen[i][j] = '#';
+            this->frame_list[frame_index][i][j] = fill_sym;
         }
     }
 }

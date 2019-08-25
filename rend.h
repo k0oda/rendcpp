@@ -22,7 +22,7 @@ namespace rend
 
     public:
         Screen(unsigned int scr_height, unsigned int scr_width, unsigned int scr_FPS, unsigned int frames_count);
-        void init_scr();
+        void fill_frame(unsigned int frame_index, char fill_sym='#');
         void render(int repeat=1);
     };
 }
