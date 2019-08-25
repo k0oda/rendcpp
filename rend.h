@@ -15,7 +15,8 @@ namespace rend
         int height, width, FPS;
         float frame_time;
 
-        std::vector<std::vector<char>> screen;
+        std::vector<std::vector<char>> frame;
+        std::vector<std::vector<std::vector<char>>> frame_list;
 
     public:
         Screen(unsigned int scr_height, unsigned int scr_width, unsigned int scr_FPS);

@@ -1,16 +1,20 @@
 #include "rend.h"
 
-rend::Screen::Screen(unsigned int scr_height, unsigned int scr_width, unsigned int scr_FPS)
+rend::Screen::Screen(unsigned int scr_height, unsigned int scr_width, unsigned int scr_FPS, unsigned int frames_count)
 {
     height = scr_height;
     width = scr_width;
     FPS = scr_FPS;
     frame_time = 1 / (float) FPS;
     
-    screen.resize(height);
-    for (int i = 0; i < height; i++)
+    frame_list.resize(frames_count);
+    for (int i = 0; i < frame_list.size(); i++)
     {
-        screen[i].resize(width);
+        frame_list[i].resize(height);
+        for (int j = 0; j < height; j++)
+        {
+            frame_list[i][j].resize(width);
+        }
     }
 }
 
