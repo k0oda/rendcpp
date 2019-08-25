@@ -16,7 +16,7 @@ int main(int argc, char const *argv[])
     {
         screen.fill_frame(i, '*');
     }
-    screen.render(-1);
+    screen.render(10);
 
     return 0;
 }
