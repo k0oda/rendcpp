@@ -1,11 +1,29 @@
 #include "rend.h"
 
-rend::Screen::Screen(unsigned int scr_height, unsigned int scr_width, unsigned int scr_FPS, unsigned int frames_count)
+rend::Screen::Screen(unsigned int scr_FPS, unsigned int frames_count, unsigned int scr_height, unsigned int scr_width)
 {
-    height = scr_height;
-    width = scr_width;
     FPS = scr_FPS;
     frame_time = 1 / (float) FPS;
+
+    if (scr_height and scr_width > 0)
+    {
+        height = scr_height;
+        width = scr_width;
+    } else
+    {
+        // Get size of terminal window
+        ioctl(STDOUT_FILENO, TIOCGWINSZ, &terminal_size);
+
+        // Optimizing screen size
+        terminal_size.ws_col--;
+        terminal_size.ws_row--;
+
+        height = terminal_size.ws_row;
+        width = terminal_size.ws_col;
+    }
+
+    x_center = width / 2;
+    y_center = height / 2;
     
     frame_list.resize(frames_count);
     for (int i = 0; i < frame_list.size(); i++)

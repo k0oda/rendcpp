@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <unistd.h>
+#include <sys/ioctl.h>
 
 
 namespace rend
@@ -25,7 +26,7 @@ namespace rend
         void render_frame(std::vector<std::vector<char>> frame);
 
     public:
-        Screen(unsigned int scr_height, unsigned int scr_width, unsigned int scr_FPS, unsigned int frames_count);
+        Screen(unsigned int scr_FPS, unsigned int frames_count, unsigned int scr_height=0, unsigned int scr_width=0);
         unsigned short get_x_center();
         unsigned short get_y_center();
         void fill_frame(unsigned int frame_index, char fill_sym='#');
