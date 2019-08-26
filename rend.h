@@ -6,6 +6,7 @@
 #include <unistd.h>
 #include <sys/ioctl.h>
 
+#define HOME "\033[1;1H"
 
 namespace rend
 {

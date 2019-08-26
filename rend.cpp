@@ -65,7 +65,7 @@ void rend::Screen::edit_frame(unsigned int frame_index, unsigned int x, unsigned
 
 void rend::Screen::render_frame(std::vector<std::vector<char>> frame)
 {
-    std::cout << "\033[1;1H";   // Reset cursor position
+    std::cout << HOME;   // Reset cursor position
     for (int i = 0; i < this->height; i++)
     {
         for (int j = 0; j < this->width; j++)
