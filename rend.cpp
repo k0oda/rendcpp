@@ -47,6 +47,9 @@ unsigned short rend::Screen::get_y_center()
 {
     return this->y_center;
 }
+
+// Editor methods
+
 void rend::Screen::fill_frame(unsigned int frame_index, char fill_sym)
 {
     for (int i = 0; i < this->height; i++)
@@ -62,6 +65,8 @@ void rend::Screen::edit_frame(unsigned int frame_index, unsigned int x, unsigned
 {
     this->frame_list[frame_index][y][x] = sym;
 }
+
+// Render methods
 
 void rend::Screen::render_frame(std::vector<std::vector<char>> frame)
 {
