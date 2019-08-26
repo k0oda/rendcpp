@@ -36,6 +36,17 @@ rend::Screen::Screen(unsigned int scr_FPS, unsigned int frames_count, unsigned i
     }
 }
 
+// Getters
+
+unsigned short rend::Screen::get_x_center()
+{
+    return this->x_center;
+}
+
+unsigned short rend::Screen::get_y_center()
+{
+    return this->y_center;
+}
 void rend::Screen::fill_frame(unsigned int frame_index, char fill_sym)
 {
     for (int i = 0; i < this->height; i++)
