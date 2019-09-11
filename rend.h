@@ -36,7 +36,7 @@ namespace rend
         unsigned short get_y_center();
 
         // Editor methods
-        void fill_frame(unsigned int frame_index, char fill_sym='#');
+        void fill_frame(unsigned int frame_index, char fill_sym=' ');
         void edit_frame(unsigned int frame_index, unsigned int x, unsigned int y, char sym=' ');
 
         // Render methods
