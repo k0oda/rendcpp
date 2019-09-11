@@ -26,7 +26,7 @@ namespace rend
         std::vector<std::vector<char>> frame;
         std::vector<std::vector<std::vector<char>>> frame_list;
 
-        void render_frame(std::vector<std::vector<char>> frame);
+        void render_frame(std::vector<std::vector<char>> frame, std::vector<std::vector<char>> prev_frame = std::vector<std::vector<char>>());
 
     public:
         Screen(unsigned int scr_FPS, unsigned int frames_count, unsigned int scr_height=0, unsigned int scr_width=0);
