@@ -52,6 +52,7 @@ int main(int argc, char const *argv[])
                     break;
                 case 'q':
                     system("clear");
+                    system("stty cooked");
                     return 0;
             }
         }
