@@ -89,10 +89,16 @@ void rend::Screen::render(int repeat)
     system("setterm -cursor off");  // Hide cursor
     while (counter <= repeat)
     {
-        for (std::vector<std::vector<char>> frame : frame_list)
+        for (int i = 0; i < this->frame_list.size(); i++)
         {
             sleep(frame_time);
-            this->render_frame(frame);
+            if(i == 0)
+            {
+                this->render_frame(this->frame_list[i]);
+            } else
+            {
+                this->render_frame(this->frame_list[i], this->frame_list[i - 1]);
+            }
         }
         counter++;
     }
