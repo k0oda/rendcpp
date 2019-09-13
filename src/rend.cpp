@@ -1,4 +1,4 @@
-#include "rend.h"
+#include "../lib/rend.h"
 
 rend::Screen::Screen(unsigned int scr_FPS, unsigned int frames_count, unsigned int scr_height, unsigned int scr_width)
 {

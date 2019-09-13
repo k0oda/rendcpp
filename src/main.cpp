@@ -1,4 +1,4 @@
-#include "rend.h"
+#include "../lib/rend.h"
 
 using rend::Screen;
 
