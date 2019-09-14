@@ -24,7 +24,7 @@ rend::Screen::Screen(unsigned int scr_FPS, unsigned int frames_count, unsigned i
 
     x_center = width / 2;
     y_center = height / 2;
-    
+
     frame_list.resize(frames_count);
     for (int i = 0; i < frame_list.size(); i++)
     {
@@ -95,7 +95,7 @@ void rend::Screen::render_frame(std::vector<std::vector<char>> frame, std::vecto
                         std::cout << "\033[" << y << ";" << x << "H";   // Move cursor to y;x position
                         std::cout << frame[y][x];
                     }
-                }                
+                }
             }
         }
     }
@@ -105,7 +105,6 @@ void rend::Screen::render(int repeat)
 {
     unsigned int counter = 0;
 
-    system("clear");
     system("setterm -cursor off");  // Hide cursor
     while (counter <= repeat)
     {
