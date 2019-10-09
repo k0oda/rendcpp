@@ -6,6 +6,7 @@ SRCDIR = src
 BUILDDIR = build
 TARGET = bin/boxmover
 INSTALLATION_DIR = /usr/local/bin
+LIB_DIR = lib/
 
 SRCEXT = cpp
 SOURCES = $(wildcard $(SRCDIR)/*.$(SRCEXT))
@@ -22,7 +23,7 @@ $(TARGET): $(OBJECTS)
 $(BUILDDIR)/%.o: $(SRCDIR)/%.$(SRCEXT)
 	@echo "Compiling $@:"
 	@mkdir -p $(BUILDDIR)
-	$(CC) -c -o $@ $<
+	$(CC) -c -I $(LIB_DIR) -o $@ $<
 
 install:
 	@echo "Installing..."
