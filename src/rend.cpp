@@ -36,8 +36,6 @@ rend::Screen::Screen(unsigned int scr_FPS, unsigned int frames_count, unsigned i
     }
 }
 
-// Getters
-
 unsigned short rend::Screen::get_x_center()
 {
     return this->x_center;
@@ -47,8 +45,6 @@ unsigned short rend::Screen::get_y_center()
 {
     return this->y_center;
 }
-
-// Editor methods
 
 void rend::Screen::fill_frame(unsigned int frame_index, char fill_sym)
 {
@@ -65,8 +61,6 @@ void rend::Screen::edit_frame(unsigned int frame_index, unsigned int x, unsigned
 {
     this->frame_list[frame_index][y][x] = sym;
 }
-
-// Render methods
 
 void rend::Screen::render_frame(std::vector<std::vector<char>> frame, std::vector<std::vector<char>> prev_frame)
 {
