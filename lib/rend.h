@@ -15,15 +15,14 @@ namespace rend
     private:
         // Screen size and Frames Per Second
         int height, width, FPS;
+
+        // Time to print one frame
         float frame_time;
 
-        // Size and position variables
         winsize terminal_size;
         unsigned short x_center = terminal_size.ws_col / 2;
         unsigned short y_center = terminal_size.ws_row / 2;
 
-        // Frame arrays
-        std::vector<std::vector<char>> frame;
         std::vector<std::vector<std::vector<char>>> frame_list;
 
         void render_frame(std::vector<std::vector<char>> frame, std::vector<std::vector<char>> prev_frame = std::vector<std::vector<char>>());
@@ -31,15 +30,16 @@ namespace rend
     public:
         Screen(unsigned int scr_FPS, unsigned int frames_count, unsigned int scr_height=0, unsigned int scr_width=0);
 
-        // Getters
         unsigned short get_x_center();
         unsigned short get_y_center();
 
-        // Editor methods
+        // Fill frame by symbol
         void fill_frame(unsigned int frame_index, char fill_sym=' ');
+        
+        // Edit frame's symbol by coordinate
         void edit_frame(unsigned int frame_index, unsigned int x, unsigned int y, char sym=' ');
 
-        // Render methods
+        // Start rendering process (print all frames from frame_list)
         void render(int repeat=1);
     };
 }
